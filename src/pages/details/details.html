@@ -1,0 +1,33 @@
+<!--
+  blogs that helped
+    http://www.icoderslab.com/how-to-fetch-json-data-from-web-service-in-ionic-2-app-using-angular-2/
+    http://blog.ionic.io/10-minutes-with-ionic-2-calling-an-api/
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Expenses</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content class="outer-content">
+  
+  <ion-list>
+    <ion-item>
+      <ion-datetime text-center displayFormat="MMM YYYY"></ion-datetime>
+      <!--<button ion-button >
+      </button> --> 
+    </ion-item>
+  </ion-list>
+
+  <ion-list>
+    <button ion-item *ngFor="let expense of expenses" (click)="goToDescription(expense)">
+      <h2>{{expense.place}}</h2>
+      <p>{{expense.createdAt | date:"MMM d, y h:mma"}}</p>
+      <ion-note item-right>${{expense.amount}}</ion-note>
+    </button>
+</ion-list>
+
+</ion-content>
